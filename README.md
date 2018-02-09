@@ -1,6 +1,6 @@
 # Lozad.js [![npm version](https://badge.fury.io/js/lozad.svg)](https://badge.fury.io/js/lozad) [![Build Status](https://travis-ci.org/ApoorvSaxena/lozad.js.svg?branch=master)](https://travis-ci.org/ApoorvSaxena/lozad.js) [![](https://data.jsdelivr.com/v1/package/npm/lozad/badge)](https://www.jsdelivr.com/package/npm/lozad)
 
-> Highly performant, light ~0.7kb and configurable lazy loader in pure JS with no dependencies for images, iframes and more, using IntersectionObserver API
+> Highly performant, light and configurable lazy loader in pure JS with no dependencies for images, iframes and more, using IntersectionObserver API
 
 ![lozad.js lazy loading javascript library](./banner/lozad-banner.jpg "lozad.js lazy loading javascript library")
 
@@ -108,17 +108,6 @@ lozad('.lozad', {
 
         // Custom implementation to load an element
         // e.g. el.src = el.getAttribute('data-src');
-        
-        // for picture tag
-        // more information see in "Example with picture tag" section 
-        var isIE = !!document.documentMode;
-        if (element.nodeName.toLowerCase() === 'picture') {
-             var img = document.createElement('img');
-             if (isIE && element.getAttribute('data-iesrc')) {
-                 img.src = element.getAttribute('data-iesrc');
-             }             
-             element.appendChild(img);
-        }
     }
 });
 ```
@@ -160,9 +149,9 @@ observer.triggerLoad(coolImage);
 
 ## Example with picture tag
 
-Create _a broken_ picture element structure.  
+Create _a broken_ picture element structure.
 
-> IE browser don't support picture tag!  
+> IE browser don't support picture tag!
 > You need to set `data-iesrc` attribute (only for your picture tags) with source for IE browser
 
 ```html
@@ -175,9 +164,9 @@ Create _a broken_ picture element structure.
     <!-- instead of img element, there will be the last source with the minimum dimensions -->
     <!-- for disabled JS you can set <noscript><img src="images/thumbs/04.jpg"></noscript> -->
 </picture>
-``` 
+```
 
-When _lozad_ load this picture element, it will fix it.  
+When _lozad_ load this picture element, it will fix it.
 That's all ))
 
 ## Browser Support
@@ -191,6 +180,14 @@ Checkout the [FAQ Wiki](https://github.com/ApoorvSaxena/lozad.js/wiki/Frequently
 ## Sites using Lozad.js
 
 * [gis.utah.gov](https://gis.utah.gov)
+* [Giving Assistant](https://givingassistant.org/)
+* [Just A Pinch Recipe Club](https://www.justapinch.com/)
+* [am](https://www.am.com.mx/)
+* [Admiral Markets](https://admiralmarkets.com/)
+* [KickResume](https://www.kickresume.com/)
+* [Gmelius](https://gmelius.com/)
+* [Dormy](https://www.dormy.se/)
+* [Nabobil](https://nabobil.no/)
 * *[Add your site]* - See [Contributing section](./CONTRIBUTING.md)
 
 ## Support Lozad.js
